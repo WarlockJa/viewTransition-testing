@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import { unstable_ViewTransition as ViewTransition } from "react";
+import RotaryMenu from "@/components/Home/RotaryMenu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +26,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <nav>
+          <RotaryMenu />
+        </nav>
+
+        <main className="to-background from-foreground/20 bg-gradient-to-b">
+          <ViewTransition>{children}</ViewTransition>
+        </main>
       </body>
     </html>
   );
