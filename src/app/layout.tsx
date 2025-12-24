@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { unstable_ViewTransition as ViewTransition } from "react";
 import RotaryMenu from "@/components/Home/RotaryMenu";
+import { ViewTransition } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +33,7 @@ export default function RootLayout({
           <RotaryMenu />
         </nav>
 
-        <main className="to-background from-foreground/20 bg-gradient-to-b">
+        <main className="to-background from-foreground/20 bg-linear-to-b">
           <ViewTransition>{children}</ViewTransition>
         </main>
       </body>

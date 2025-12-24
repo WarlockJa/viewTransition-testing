@@ -1,10 +1,7 @@
-import { unstable_ViewTransition as ViewTransition } from "react";
 import tattoos from "@/lib/data/tattoo";
-import { use } from "react";
+import { use, ViewTransition } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-
-export const runtime = "edge";
 
 export default function TattoosPage({
   params,
@@ -19,7 +16,7 @@ export default function TattoosPage({
   }
 
   return (
-    <div className="from-background to-foreground/20 bg-gradient-to-br px-4 py-8">
+    <div className="from-background to-foreground/20 bg-linear-to-br px-4 py-8">
       <div className="relative flex min-h-[93vh] items-end">
         <ViewTransition name="description">
           <div className="relative z-10 w-[60%] rounded-2xl border border-gray-800/50 bg-gray-900/60 p-8 shadow-xl backdrop-blur-md">
